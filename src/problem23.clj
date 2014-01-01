@@ -17,7 +17,7 @@
 (defn- all-sums []
   (let [abundants (filter abundant? (range 11 28123))]
     (distinct (for [x abundants y abundants
-                    :while (and (<= y x) (<= (+ x y) 28123))] (+ x y)))))
+                    :when (and (<= y x) (<= (+ x y) 28123))] (+ x y)))))
 
 (defn solution []
   (let [sums (all-sums)
