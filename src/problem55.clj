@@ -2,8 +2,7 @@
   (:import [java.math BigDecimal]))
 
 (defn- reversed [n]
-  (let [s (str n)]
-    (BigDecimal. (clojure.string/reverse s))))
+  (BigDecimal. (clojure.string/reverse (str n))))
 
 (defn- palindrom? [n]
   (= n (reversed n)))
@@ -11,7 +10,7 @@
 (defn- next-number [n]
   (+ n (reversed n)))
 
-(defn lychrel-number? [^Integer n]
+(defn lychrel-number? [n]
   (loop [k n i 0]
     (if (>= i 50)
       true
