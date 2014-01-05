@@ -1,9 +1,9 @@
 (ns euler.problem09)
 
-(defn- triplet? [^Integer a ^Integer b ^Integer c]
+(defn- triplet? [a b c]
   (and (< a b c) (= (* c c) (+ (* a a) (* b b)))))
 
-(defn- valid? [^Integer a ^Integer b ^Integer c]
+(defn- valid? [a b c]
   (and (triplet? a b c) (= 1000 (+ a b c))))
 
 (defn solution []
@@ -12,4 +12,4 @@
                                :when (valid? a b c)] [a b c])))]
     (println (* x y z))))
 
-(solution)
+(time (solution))

@@ -8,8 +8,8 @@
 
 (defn- sum [s] (reduce + s))
 
-(defn- disjointed? [s]
-  (let [[a b] s]
+(defn- disjointed? [p]
+  (let [[a b] p]
     (= (s/intersection a b) #{})))
 
 (defn- disjointed-subsets [s]
@@ -29,7 +29,7 @@
 (defn solution []
   (sum (pmap sum (filter special-sum-set? sets))))
 
-(solution)
+(time (solution))
 
 
 

@@ -2,7 +2,7 @@
   (:require [clojure.core.reducers :as r]))
 
 (defn- factorial [n]
-  (loop [k n sum 1]
+  (loop [k (int n) sum 1]
     (if (zero? k) sum
       (recur (- k 1) (* sum k)))))
 
@@ -14,7 +14,7 @@
 (defn solution []
   (println (r/reduce + (into [] (r/filter curious? (range 3 limit))))))
 
-(solution)
+(time (solution))
 
 
 

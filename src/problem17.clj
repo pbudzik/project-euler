@@ -15,9 +15,9 @@
                                     (str (spell k) " hundred" (if (zero? (rem n 100)) "" " and ") (spell j)))
       (= n 1000) "one thousand")))
 
-(defn- length [n] (count (.replaceAll (spell n) "\\s" "")))
+(defn- length [n] (count (.replaceAll ^String (spell n) "\\s" "")))
 
 (defn solution []
   (println (reduce + (map length (range 1 1001)))))
 
-(solution)
+(time (solution))

@@ -9,7 +9,7 @@
 (defn solution []
   (println (diff 100)))
 
-(solution)
+(time (solution))
 
 
 

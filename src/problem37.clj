@@ -10,9 +10,9 @@
         (doseq [j (range (* 2 i) (inc limit) i)]
           (aset t (dec j) false)))) t))
 
-(defn- prime? [^Integer n] (aget primes-table (dec n)))
+(defn- prime? [n] (aget ^booleans primes-table (dec n)))
 
-(defn- truncatable-from? [direction ^Integer n]
+(defn- truncatable-from? [direction n]
   (let [v (into [] (str n))
         subvectors (condp = direction
                      :left (for [i (range 0 (count v))]
@@ -22,12 +22,12 @@
                      nil)]
     (every? prime? (map #(Integer/valueOf (clojure.string/join %)) subvectors))))
 
-(defn truncatable? [^Integer n] (and (truncatable-from? :left n) (truncatable-from? :right n)))
+(defn truncatable? [n] (and (truncatable-from? :left n) (truncatable-from? :right n)))
 
 (defn solution []
   (println (reduce + (take 11 (filter truncatable? (range 8 limit))))))
 
-(solution)
+(time (solution))
 
 
 

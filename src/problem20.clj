@@ -8,7 +8,7 @@
 (defn solution []
   (println (reduce + (map #(read-string (str %)) (str (factorial 100))))))
 
-(solution)
+(time (solution))
 
 
 

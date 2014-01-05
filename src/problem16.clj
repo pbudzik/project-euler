@@ -6,5 +6,5 @@
 (defn solution []
   (println (reduce + (map #(read-string (str %)) (str value)))))
 
-(solution)
+(time (solution))
 

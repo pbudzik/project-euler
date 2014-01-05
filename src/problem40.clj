@@ -15,8 +15,7 @@
                        10000 [:d4 d]
                        100000 [:d5 d]
                        1000000 [:d6 d]
-                       nil)
-                     )))]
+                       nil))))]
         (recur (merge r nr) (inc n) (+ k (count v)))))))
 
 (defn solution []

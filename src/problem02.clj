@@ -7,6 +7,6 @@
         (println sum)
         (recur b c (if (even? c) (+ sum c) sum) (inc x))))))
 
-(solution)
+(time (solution))
 
 

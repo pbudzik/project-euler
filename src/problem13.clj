@@ -103,10 +103,11 @@
   53503534226472524250874054075591789781264330331690")
 
 (defn solution []
-  (println (clojure.string/join
-             (take 10 (str (reduce + (map #(bigdec (.trim %)) (.split numbers-string "\n"))))))))
+  (println
+    (clojure.string/join
+      (take 10 (str (reduce + (map #(bigdec (.trim ^String %)) (.split ^String numbers-string "\n"))))))))
 
-(solution)
+(time (solution))
 
 
 

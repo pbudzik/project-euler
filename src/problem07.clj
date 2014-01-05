@@ -12,14 +12,14 @@
 
 (defn primes
   ([] (primes 1))
-  ([n] (if (aget primes-table (dec n))
+  ([n] (if (aget ^booleans primes-table (dec n))
          (cons n (lazy-seq (primes (inc n))))
          (lazy-seq (primes (inc n))))))
 
 (defn solution []
   (println (last (take 10001 (primes)))))
 
-(solution)
+(time (solution))
 
 
 
