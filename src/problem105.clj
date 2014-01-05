@@ -1,7 +1,6 @@
 (ns euler.problem105
   (:require [clojure.math.combinatorics :as c]
-            [clojure.set :as s]
-            [clojure.core.reducers :as r]))
+            [clojure.set :as s]))
 
 (defn- to-int-set [v] (set (map read-string v)))
 

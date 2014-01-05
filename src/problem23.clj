@@ -1,6 +1,8 @@
 (ns euler.problem23
   (:require [clojure.set :as set]))
 
+;; WIP !
+
 (defn sum-divisors [n]
   (let [limit (Math/sqrt n)]
     (loop [i 2

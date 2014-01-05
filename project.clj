@@ -6,7 +6,7 @@
   :dependencies [[io.netty/netty "3.7.0.Final"]
                  [org.clojure/clojure "1.5.1"]
                  [org.clojure/core.async "0.1.242.0-44b1e3-alpha"]
-                 [criterium "0.4.2"]]
+                 [net.mikera/core.matrix "0.18.0"]]
   :min-lein-version "2.0.0"
   :source-paths ["src/clojure"]
   :java-source-paths ["src/java"]
