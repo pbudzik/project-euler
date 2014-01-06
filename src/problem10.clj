@@ -15,7 +15,7 @@
         sum))))
 
 (defn solution []
-  (println (sum-of-primes (* 2 1000 1000))))
+  (println (sum-of-primes 2000000)))
 
 (time (solution))
 

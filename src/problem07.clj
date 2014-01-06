@@ -1,26 +1,30 @@
 (ns euler.problem07)
 
-(def limit 200000)
+(def limit 125000)
 
-(def primes-table
+;; Ugly but fast :)
+
+(defn primes []
   (let [t (boolean-array limit true)]
-    (aset t 0 false)
-    (doseq [i (range 1 (inc limit))]
+    (doseq [i (range 2 limit)]
       (if (aget t (dec i))
         (doseq [j (range (* 2 i) (inc limit) i)]
-          (aset t (dec j) false)))) t))
-
-(defn primes
-  ([] (primes 1))
-  ([n] (if (aget ^booleans primes-table (dec n))
-         (cons n (lazy-seq (primes (inc n))))
-         (lazy-seq (primes (inc n))))))
+          (aset t (dec j) false))))
+    (filter #(aget ^booleans t (dec %)) (iterate inc 2))))
 
 (defn solution []
   (println (last (take 10001 (primes)))))
 
 (time (solution))
 
+;; Elegant but slow :)
 
+;(defn prime? [n]
+;  (if (even? n) false
+;    (empty? (filter #(zero? (rem n %)) (range 3 (inc (/ n 2)) 2)))))
+;
+;(defn primes [] (cons 2  (filter prime? (iterate inc 3))))
+;
+;(time (println (nth (primes) 10000)))
 
 

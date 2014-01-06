@@ -2,6 +2,8 @@
   (:require [clojure.math.combinatorics :as c]
             [clojure.set :as s]))
 
+;; SLOW
+
 (defn- to-int-set [v] (set (map read-string v)))
 
 (def sets (map #(to-int-set (.split % ",")) (.split (slurp "src/sets.txt") "\n")))
