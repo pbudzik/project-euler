@@ -10,10 +10,6 @@
 
 (def memo-sum-of-divisors (memoize sum-of-divisors))
 
-(defn amicable? [a b]
-  (println a b)
-  (and (= (md a) b) (= (md b) a)))
-
 (defn solution []
   (reduce + (for [a (range 2 10000)]
               (let [b (memo-sum-of-divisors a)]
